@@ -1,0 +1,31 @@
+{% include 'admin/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-4 border mt-5 p-4" style="background-color:whitesmoke">
+            <legend class="text-center">Login page</legend>
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-group">
+
+                    <label>Username</label>
+                    <input type="text" class="form-control" name='user' placeholder="username">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="password" name='pass'>
+                    {% if msg %}
+                    <small class="text-danger">{{ msg }}</small>
+                    {% endif %}
+                    
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

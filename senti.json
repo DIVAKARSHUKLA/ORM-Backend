@@ -1,0 +1,76 @@
+[
+    {
+        "narendramodi": {
+            "reply": {
+                "pos": 89.51,
+                "neg": 5.25,
+                "neu": 5.25
+            },
+            "text": {
+                "pos": 76.2,
+                "neg": 11.9,
+                "neu": 11.9
+            }
+        },
+        "amitshah": {
+            "reply": {
+                "pos": 69.51,
+                "neg": 15.24,
+                "neu": 15.24
+            },
+            "text": {
+                "pos": 54.97,
+                "neg": 22.51,
+                "neu": 22.51
+            }
+        },
+        "arvindkejriwal": {
+            "reply": {
+                "pos": 17.49,
+                "neg": 41.26,
+                "neu": 41.26
+            },
+            "text": {
+                "pos": 46.84,
+                "neg": 26.58,
+                "neu": 26.58
+            }
+        },
+        "rahulgandhi": {
+            "reply": {
+                "pos": 39.06,
+                "neg": 30.47,
+                "neu": 30.47
+            },
+            "text": {
+                "pos": 45.4,
+                "neg": 27.3,
+                "neu": 27.3
+            }
+        },
+        "mayawati": {
+            "reply": {
+                "pos": 30.25,
+                "neg": 34.88,
+                "neu": 34.88
+            },
+            "text": {
+                "pos": 41.22,
+                "neg": 29.39,
+                "neu": 29.39
+            }
+        },
+        "MamataOfficial": {
+            "reply": {
+                "pos": 62.62,
+                "neg": 18.69,
+                "neu": 18.69
+            },
+            "text": {
+                "pos": 60.99,
+                "neg": 19.51,
+                "neu": 19.51
+            }
+        }
+    }
+]

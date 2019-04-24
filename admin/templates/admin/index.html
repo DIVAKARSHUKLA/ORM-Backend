@@ -1,0 +1,158 @@
+{% include 'admin/base.html' %}
+{% load static %}
+{% block content %}
+<section id="users">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8 mt-4">
+                <ul class="list-group">
+                    <li class="list-group-item bg-primary text-white">Users</li>
+                    {% for users in user %}
+                    <div class="list-items list-group-item">
+                        <div class="row">
+                            <div class="col">
+                                <img src="{{ users.userprofile.image.url }}" alt="" width="64"
+                                    style="border-radius: 50%">
+                                <a href="{% url 'userProfile' users.id %}" class="ml-2">{{users.username}}</a>
+                            </div>
+
+                            <div class="col">
+                                {% if  users.userprofile.user_package_expires == None %}
+                                <p>Expires in: None</p>
+                                {% else %}
+                                <p>Expires in: {{users.userprofile.user_package_expires}} days</p>
+                                {% endif %}
+                            </div>
+                            <div class="col">
+                                {% if users.userprofile.user_active == False %}
+                                <p>User is active: No</p>
+                                {% else %}
+                                <p>User is active: {{users.userprofile.user_active}}</p>
+                                {% endif %}
+                            </div>
+                            <div class="col">
+                                {% if users.userprofile.user_package == None%}
+                                <p>Package: None</p>
+                                {% else %}
+                                <p>Package: {{users.userprofile.user_package}} months</p>
+                                {% endif %}
+                            </div>
+                            <div class="col">
+                                {% if users.userprofile.user_type == 'Free' %}
+                                <p>Type: Free</p>
+                                {% else %}
+                                <p>Type: users.userprofile.user_type</p>
+                                {% endif %}
+
+                            </div>
+                            <div class="col-1">
+                                <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i
+                                        class="fas fa-window-close text-danger"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#approve"><i class="fas fa-check-square text-success"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">User Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--confirm Modal -->
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Confirmation Dialog</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to delete the user
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">No</button>
+                                        <button type="button" class="btn btn-danger">Yes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--confirm Modal for approval -->
+                        <div class="modal fade" id="approve" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Confirmation Dialog</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Approve User
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">No</button>
+                                        <button type="button" class="btn btn-danger">Yes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+            <!-- Notification Section -->
+            <div class="col-sm-4 mt-4">
+                <div class="slide"></div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">
+                        Recent Activities
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                    <a href="#" class="list-group-item list-group-item-action" tabindex="-1"
+                        aria-disabled="true">Vestibulum at eros</a>
+                </div>
+            </div>
+        </div>
+</section>
+<style scoped>
+    .slider {
+        height: 98%;
+        float: left;
+        margin-top: 2px;
+        border: 4px solid #ccc;
+        border-radius: 8px;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $('slider').click(function () {
+            $("border1").toggleClass('open');
+        });
+    });
+</script>
+{% endblock %}
