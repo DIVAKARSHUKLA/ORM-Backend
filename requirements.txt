@@ -10,7 +10,7 @@ Django==2.1.7
 django-allauth==0.39.1
 django-crontab==0.7.1
 django-rest-auth==0.9.3
-djangorestframework==3.9.2
+djangorestframework==3.11.2
 feedfinder2==0.0.4
 feedparser==5.2.1
 idna==2.8
