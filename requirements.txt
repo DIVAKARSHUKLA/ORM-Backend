@@ -22,7 +22,7 @@ matplotlib==3.0.3
 more-itertools==6.0.0
 newspaper3k==0.2.8
 nltk==3.4
-numpy==1.16.2
+numpy==1.22.0
 oauthlib==3.0.1
 pandas==0.24.2
 Pillow==5.4.1
